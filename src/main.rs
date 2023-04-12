@@ -1,10 +1,7 @@
-use serde::{Serialize, Deserialize};
-use reqwest::blocking::Client;
+mod dto;
 
-#[derive(Serialize, Deserialize)]
-struct HttpBinResponse {
-    origin: String,
-}
+use reqwest::blocking::Client;
+use dto::http_bin_response::HttpBinResponse;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
