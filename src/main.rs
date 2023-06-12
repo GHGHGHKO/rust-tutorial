@@ -1,3 +1,5 @@
+use std::env;
+
 mod dto;
 mod client;
 
@@ -34,6 +36,13 @@ fn classify_fruit(fruit: &str) -> Result<&str, String> {
     }
 }
 
+fn get_environment_or_parameter(key: &str) -> String {
+    let env_key = env::var("MY_PASSWORD")
+        .unwrap_or_else(|_| String::from(key));
+
+    env_key
+}
+
 fn main() {
     find_prime_number(5);
     println!("{:?}", ok_or_err(true));
@@ -46,4 +55,6 @@ fn main() {
             Err(error) => println!("과일: {}, 오류: {}", fruit, error),
         }
     }
+
+    println!("{:?}", get_environment_or_parameter("p@ssw0rd!"));
 }
