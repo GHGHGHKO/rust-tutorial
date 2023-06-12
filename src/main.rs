@@ -1,9 +1,6 @@
 mod dto;
 mod client;
 
-use client::http_bin_client::http_bin_client;
-use client::tenor_client::tenor_client;
-
 fn find_prime_number(number: u32) {
     match number {
         1 => println!("It's one!"),
@@ -18,8 +15,18 @@ fn find_prime_number(number: u32) {
     }
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn ok_or_err(is_success: bool) -> Result<String, String> {
+    match is_success {
+        true => {
+            Ok(String::from("success!"))
+        }
+        false => {
+            Err(String::from("error!"))
+        }
+    }
+}
+
+fn main() {
     find_prime_number(5);
-    let _ = http_bin_client();
-    tenor_client()
+    println!("{:?}", ok_or_err(true));
 }
