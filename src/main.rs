@@ -26,7 +26,24 @@ fn ok_or_err(is_success: bool) -> Result<String, String> {
     }
 }
 
+fn classify_fruit(fruit: &str) -> Result<&str, String> {
+    match fruit {
+        "용과" | "레몬" | "사과" | "오렌지" => Ok("씨앗이 있는 과일"),
+        "바나나" | "귤" | "망고" | "파인애플" => Ok("씨앗이 없는 과일"),
+        _ => Err("잘못된 과일입니다.".to_string()),
+    }
+}
+
 fn main() {
     find_prime_number(5);
     println!("{:?}", ok_or_err(true));
+
+    let fruits = ["귤", "바나나", "사과", "수박"];
+
+    for fruit in &fruits {
+        match classify_fruit(fruit) {
+            Ok(category) => println!("과일: {}, 분류: {}", fruit, category),
+            Err(error) => println!("과일: {}, 오류: {}", fruit, error),
+        }
+    }
 }
