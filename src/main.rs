@@ -4,9 +4,7 @@ mod client;
 use client::http_bin_client::http_bin_client;
 use client::tenor_client::tenor_client;
 
-fn find_prime_number() {
-    let number = 7;
-
+fn find_prime_number(number: u32) {
     match number {
         1 => println!("It's one!"),
 
@@ -21,7 +19,7 @@ fn find_prime_number() {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    find_prime_number();
+    find_prime_number(5);
     let _ = http_bin_client();
     tenor_client()
 }
