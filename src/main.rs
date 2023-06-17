@@ -1,5 +1,6 @@
 use std::env;
 use vaultwarden::from_db::FromDb;
+use serde::{Serialize, Deserialize};
 
 mod dto;
 mod client;
@@ -82,7 +83,7 @@ impl BankAccount {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 struct Person {
     name: String,
     age: u32,
