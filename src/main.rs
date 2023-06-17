@@ -1,7 +1,9 @@
 use std::env;
+use vaultwarden::from_db::FromDb;
 
 mod dto;
 mod client;
+mod vaultwarden;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -80,6 +82,20 @@ impl BankAccount {
     }
 }
 
+#[derive(Debug)]
+struct Person {
+    name: String,
+    age: u32,
+}
+
+impl FromDb for Person {
+    type Output = Self;
+
+    fn from_db(self) -> Self::Output {
+        self
+    }
+}
+
 fn main() {
     find_prime_number(5);
     println!("{:?}", ok_or_err(true));
@@ -103,4 +119,19 @@ fn main() {
     account.check_balance(); // 현재 잔액 조회: 1300원
     account.withdraw(2000.0)
         .unwrap_or_else(|error| println!("에러: {}", error)); // 잔액 부족으로 인한 출금 실패, 에러 출력
+
+    // FromDb 예제
+    let persons: Vec<Person> = vec![
+        Person { name: "John".to_string(), age: 30 },
+        Person { name: "Jane".to_string(), age: 25 },
+        Person { name: "Mike".to_string(), age: 40 },
+    ];
+
+    let persons_output: Vec<Person> = FromDb::from_db(persons);
+    println!("{:?}", persons_output);
+
+    let person: Option<Person> = Some(Person { name: "Alice".to_string(), age: 35 });
+
+    let person_output: Option<Person> = FromDb::from_db(person);
+    println!("{:?}", person_output);
 }
