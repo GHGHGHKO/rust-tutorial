@@ -5,6 +5,7 @@ use serde::{Serialize, Deserialize};
 mod dto;
 mod client;
 mod vaultwarden;
+mod type_inference;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -135,4 +136,17 @@ fn main() {
 
     let person_output: Option<Person> = FromDb::from_db(person);
     println!("{:?}", person_output);
+
+    let a = 10;
+    println!("before: {a}");
+
+    {
+        let a = "hello";
+        println!("inner scope: {a}");
+
+        let a = true;
+        println!("shadowed in inner scope: {a}");
+    }
+
+    println!("after: {a}");
 }

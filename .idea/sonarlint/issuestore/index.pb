@@ -1,8 +1,6 @@
 
 A
 rust-tutorial.iml,4\3\4376180888be0ec81702858c269468aa6d7dfdaf
-M
-src/client/http_bin_client.rs,7\7\775b391cf1bfe6082368b745928f8a5af9414c8f
 L
 src/dto/http_bin_response.rs,4\b\4b17a5dcce7d4730c8d2af95899b3724b0c71fc5
 :
