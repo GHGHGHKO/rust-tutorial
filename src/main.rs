@@ -2,6 +2,8 @@ use std::env;
 use vaultwarden::from_db::FromDb;
 use serde::{Serialize, Deserialize};
 use crate::weather::weather::Weather;
+use std::fs::File;
+use std::io::{Error, Read};
 
 mod dto;
 mod client;
@@ -100,6 +102,18 @@ impl FromDb for Person {
     }
 }
 
+fn read_receipt() -> Result<(), Error> {
+    let file_name = "receipt.txt";
+
+    let mut file = File::open(file_name)?;
+    let mut contents = String::new();
+
+    file.read_to_string(&mut contents)?;
+    print!("{}", contents);
+
+    Ok(())
+}
+
 fn main() {
     find_prime_number(5);
     println!("{:?}", ok_or_err(true));
@@ -152,5 +166,7 @@ fn main() {
 
     println!("after: {a}");
 
-    println!("{:?}", Weather::weather_forecasting_stone(&Weather::Earthquake))
+    println!("{:?}", Weather::weather_forecasting_stone(&Weather::Earthquake));
+
+    read_receipt().expect("TODO: panic message");
 }
