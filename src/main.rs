@@ -167,6 +167,4 @@ fn main() {
     println!("after: {a}");
 
     println!("{:?}", Weather::weather_forecasting_stone(&Weather::Earthquake));
-
-    read_receipt().expect("TODO: panic message");
 }
