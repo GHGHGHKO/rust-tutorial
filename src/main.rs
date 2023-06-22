@@ -4,12 +4,14 @@ use serde::{Serialize, Deserialize};
 use crate::weather::weather::Weather;
 use std::fs::File;
 use std::io::{Error, Read};
+use ownership::ownership::fail_move_ownership;
 
 mod dto;
 mod client;
 mod vaultwarden;
 mod type_inference;
 mod weather;
+mod ownership;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -167,4 +169,6 @@ fn main() {
     println!("after: {a}");
 
     println!("{:?}", Weather::weather_forecasting_stone(&Weather::Earthquake));
+
+    fail_move_ownership();
 }
