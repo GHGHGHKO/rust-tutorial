@@ -21,8 +21,6 @@ fn find_prime_number(number: u32) {
 
         4..=10 => println!("It's between 4 and 10 (inclusive)!"),
 
-        n if n % 2 == 0 => println!("It's an even number!"),
-
         _ => println!("It doesn't match any condition."),
     }
 }
@@ -116,8 +114,25 @@ fn read_receipt() -> Result<(), Error> {
     Ok(())
 }
 
+fn variable_examples() {
+    let unsigned_int = 123_u32;
+
+    let a: u64 = 123;
+
+    let pi = 3.14159265358979323846264338327950288;
+
+    let small_pi : f32 = 3.14;
+
+    let url = "https://httpbin.org/ip";
+
+    let tenor_key = env::var("TENOR_API_KEY")
+        .unwrap_or_else(|_| String::from("<default_api_key>"));
+
+    let signed_int = 0xff_ff_ff_ff_ff; // ???
+}
+
 fn main() {
-    find_prime_number(5);
+    find_prime_number(7);
     println!("{:?}", ok_or_err(true));
 
     let fruits = ["귤", "바나나", "사과", "수박"];

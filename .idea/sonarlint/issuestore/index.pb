@@ -16,3 +16,9 @@ J
 src/client/tenor_client.rs,5\2\52c45ee5657c0d093461291e31dc490a4e48e911
 >
 src/weather.rs,2\e\2e68f97cd03fca8616e4224d8cf6d355c7e502b4
+F
+src/weather/weather.rs,7\2\723063eb26c06c9034dd8cfab1754adb24a9642c
+R
+"src/type_inference/awesome_type.rs,4\e\4e302e899598620550c3d7fb26f982dd00664a8d
+@
+src/ownership.rs,8\5\85531c12f985a44a8fd616c0a2de2e3f02a8d0ed
