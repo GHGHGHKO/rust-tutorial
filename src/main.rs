@@ -128,7 +128,7 @@ fn variable_examples() {
     let tenor_key = env::var("TENOR_API_KEY")
         .unwrap_or_else(|_| String::from("<default_api_key>"));
 
-    let signed_int = 0xff_ff_ff_ff_ff; // ???
+    let signed_int: i64 = 0xff_ff_ff_ff_ff; // ???
 }
 
 fn main() {
