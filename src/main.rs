@@ -6,6 +6,7 @@ use std::fs::File;
 use std::io::{Error, Read};
 use ownership::ownership::fail_move_ownership;
 use integer_example::memory_safe::struct_is_memory_safe;
+use shadowing::shadowed_example::double_shadow_example;
 
 mod dto;
 mod client;
@@ -14,6 +15,7 @@ mod type_inference;
 mod weather;
 mod ownership;
 mod integer_example;
+mod shadowing;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -190,4 +192,6 @@ fn main() {
     fail_move_ownership();
 
     struct_is_memory_safe();
+
+    double_shadow_example();
 }
