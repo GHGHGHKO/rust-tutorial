@@ -5,6 +5,7 @@ use crate::weather::weather::Weather;
 use std::fs::File;
 use std::io::{Error, Read};
 use ownership::ownership::fail_move_ownership;
+use integer_example::memory_safe::struct_is_memory_safe;
 
 mod dto;
 mod client;
@@ -12,6 +13,7 @@ mod vaultwarden;
 mod type_inference;
 mod weather;
 mod ownership;
+mod integer_example;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -186,4 +188,6 @@ fn main() {
     println!("{:?}", Weather::weather_forecasting_stone(&Weather::Earthquake));
 
     fail_move_ownership();
+
+    struct_is_memory_safe();
 }
