@@ -7,6 +7,7 @@ use std::io::{Error, Read};
 use ownership::ownership::fail_move_ownership;
 use integer_example::memory_safe::struct_is_memory_safe;
 use shadowing::shadowed_example::double_shadow_example;
+use mutable_references::mutable_references::mutable_references;
 
 mod dto;
 mod client;
@@ -16,6 +17,7 @@ mod weather;
 mod ownership;
 mod integer_example;
 mod shadowing;
+mod mutable_references;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -194,4 +196,6 @@ fn main() {
     struct_is_memory_safe();
 
     double_shadow_example();
+
+    mutable_references();
 }
