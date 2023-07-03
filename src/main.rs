@@ -8,6 +8,7 @@ use ownership::ownership::fail_move_ownership;
 use integer_example::memory_safe::struct_is_memory_safe;
 use shadowing::shadowed_example::double_shadow_example;
 use mutable_references::mutable_references::mutable_references;
+use option::find_element::find_element_index;
 
 mod dto;
 mod client;
@@ -18,6 +19,7 @@ mod ownership;
 mod integer_example;
 mod shadowing;
 mod mutable_references;
+mod option;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -198,4 +200,13 @@ fn main() {
     double_shadow_example();
 
     mutable_references();
+
+    let numbers = [1, 2, 3, 4, 5];
+    let target = 3;
+
+    let index = find_element_index(&numbers, target);
+    match index {
+        Some(i) => println!("target: `{target}`의 위치는: {i}"),
+        None => println!("원하는 숫자를 찾지 못했습니다!"),
+    }
 }
