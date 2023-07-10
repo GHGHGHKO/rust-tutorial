@@ -9,6 +9,7 @@ use integer_example::memory_safe::struct_is_memory_safe;
 use shadowing::shadowed_example::double_shadow_example;
 use mutable_references::mutable_references::mutable_references;
 use option::find_element::find_element_index;
+use blog::mutable::default_variable_is_immutable;
 
 mod dto;
 mod client;
@@ -20,6 +21,7 @@ mod integer_example;
 mod shadowing;
 mod mutable_references;
 mod option;
+mod blog;
 
 fn find_prime_number(number: u32) {
     match number {
@@ -209,4 +211,6 @@ fn main() {
         Some(i) => println!("target: `{target}`의 위치는: {i}"),
         None => println!("원하는 숫자를 찾지 못했습니다!"),
     }
+
+    default_variable_is_immutable();
 }
