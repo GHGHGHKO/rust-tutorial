@@ -10,6 +10,7 @@ use shadowing::shadowed_example::double_shadow_example;
 use mutable_references::mutable_references::mutable_references;
 use option::find_element::find_element_index;
 use blog::mutable::default_variable_is_immutable;
+use blog::shadowing::vector_shadowing;
 
 mod dto;
 mod client;
@@ -213,4 +214,5 @@ fn main() {
     }
 
     default_variable_is_immutable();
+    vector_shadowing();
 }

@@ -16,8 +16,6 @@ R
 "src/type_inference/awesome_type.rs,4\e\4e302e899598620550c3d7fb26f982dd00664a8d
 @
 src/ownership.rs,8\5\85531c12f985a44a8fd616c0a2de2e3f02a8d0ed
-R
-"src/integer_example/memory_safe.rs,5\8\58be7ed20b56fb904c5f9389ba09515449051490
 =
 src/option.rs,d\0\d0082abb54c8cfbadcaff2d116fdcaa4872e45de
 F
@@ -26,9 +24,5 @@ I
 src/mutable_references.rs,c\a\ca8faefa08343992cb375ff4c3ce4f9380f2a183
 J
 src/vaultwarden/from_db.rs,c\0\c0cf392a30e32758ee9a3d308f48958e94c31e6d
-Q
-!src/shadowing/shadowed_example.rs,9\8\9813b65e50780b72179230189d740921687fa4d7
-\
-,src/mutable_references/mutable_references.rs,8\6\86f63eeabeabc37799c3a4f723f34a776d455041
 J
 src/option/find_element.rs,c\e\cebe16a0171a36694764dd18a4b174250292a96a
