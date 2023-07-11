@@ -10,9 +10,6 @@ pub fn fail_move_ownership() {
 
     println!("{size}");
     println!("{:?}", vector);
-
-    let me_too = i_am_on_heap;
-    print_function(me_too);
 }
 
 fn return_params_length(params: Vec<i32>) -> (usize, Vec<i32>) {
