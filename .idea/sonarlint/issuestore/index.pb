@@ -28,5 +28,3 @@ J
 src/option/find_element.rs,c\e\cebe16a0171a36694764dd18a4b174250292a96a
 R
 "src/integer_example/memory_safe.rs,5\8\58be7ed20b56fb904c5f9389ba09515449051490
-;
-src/blog.rs,3\2\32bbcf2f9a01f58a647d07467a0149c2fd7797c3
