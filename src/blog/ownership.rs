@@ -53,8 +53,8 @@ struct GooglePlayApplication {
 
 pub fn data_race() {
     let mut applications = vec![
-        GooglePlayApplication { name: "우리동네GS".to_string(), download_count: 5000000 },
-        GooglePlayApplication { name: "GSSHOP".to_string(), download_count: 10000000 }
+        GooglePlayApplication { name: "우리동네GS".to_string(), download_count: 5_000_000 },
+        GooglePlayApplication { name: "GSSHOP".to_string(), download_count: 10_000_000 }
     ];
 
     application_information(&applications);
