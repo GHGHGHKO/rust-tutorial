@@ -20,3 +20,27 @@ fn add_vector(mut vector: Vec<i32>) -> Vec<i32> {               // 3. Vec<i32>�
     // 4. 가변 `parameter`인 `vector`에 13, 21을 넣습니다.
     vector                                                      // 5. `vector`를 반환합니다.
 }
+
+pub fn ownership_is_fun() {
+    let mut fib_numbers: Vec<i32> = vec![0, 1, 1, 2, 3, 5, 8]; // 1. 여기서부터 `fib_numbers`가 유효합니다.
+
+    add_vector_by_reference(&mut fib_numbers);           // 2. 가변 참조자를 통해 `add_vector_by_reference` 함수를 호출합니다.
+    print_vector_by_reference(&fib_numbers);             // 5. 참조자를 통해 `print_vector_by_reference` 함수를 호출합니다.
+
+    fib_numbers.push(34);                                 // 9. `fib_numbers` Ownership 이 유효하기 때문에
+                                                                //    쓰기, 읽기가 정상적으로 됩니다.
+    println!("{:?}", fib_numbers);
+}                                           // 10. `fib_numbers`변수는 스코프 밖으로 벗어났기 때문에
+                                            //     더 이상 유효하지 않습니다. 메모리가 반환됩니다.
+
+fn add_vector_by_reference(vector: &mut Vec<i32>) {             // 3. 가변 참조자를 받아 내용을 수정합니다.
+    vector.push(13);
+    vector.push(21);
+}                                           // 4. `vector`는 가변 참조자로 받기 때문에
+                                            //    스코프 밖으로 넘어가도 아무런 일이 발생하지 않습니다.
+                                            //    즉, `fib_numbers` Ownership 은 유효합니다.
+
+fn print_vector_by_reference(vector: &Vec<i32>) {               // 6. 참조자를 받아 `vector`를 출력합니다.
+    println!("{:?}", vector);
+}                                           // 7. `vector`는 참조자로 받기 때문에
+                                            //    이 또한 `fib_numbers` Ownership 이 유효합니다.

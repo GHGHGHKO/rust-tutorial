@@ -12,6 +12,7 @@ use option::find_element::find_element_index;
 use blog::mutable::default_variable_is_immutable;
 use blog::shadowing::vector_shadowing;
 use blog::ownership::ownership_is_difficult;
+use blog::ownership::ownership_is_fun;
 
 mod dto;
 mod client;
@@ -217,4 +218,5 @@ fn main() {
     default_variable_is_immutable();
     vector_shadowing();
     ownership_is_difficult();
+    ownership_is_fun();
 }
