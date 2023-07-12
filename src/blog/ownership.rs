@@ -1,5 +1,5 @@
 pub fn ownership_is_difficult() {
-    let mut fib_numbers: Vec<i32> = vec![0, 1, 1, 2, 3, 5, 8]; // 1. 여기서부터 `fib_numbers`가 유효합니다.
+    let fib_numbers: Vec<i32> = vec![0, 1, 1, 2, 3, 5, 8]; // 1. 여기서부터 `fib_numbers`가 유효합니다.
 
     let mut fib_numbers = add_vector(fib_numbers);              // 2. `add_vector` 함수를 호출합니다.
     // 6. `fib_numbers`변수를 `shadowing`하여 `add_vector`값을 입력합니다.
@@ -44,3 +44,35 @@ fn print_vector_by_reference(vector: &Vec<i32>) {               // 6. 참조자�
     println!("{:?}", vector);
 }                                           // 7. `vector`는 참조자로 받기 때문에
                                             //    이 또한 `fib_numbers` Ownership 이 유효합니다.
+
+#[derive(Debug)]
+struct GooglePlayApplication {
+    name: String,
+    download_count: i32
+}
+
+pub fn data_race() {
+    let mut applications = vec![
+        GooglePlayApplication { name: "우리동네GS".to_string(), download_count: 5000000 },
+        GooglePlayApplication { name: "GSSHOP".to_string(), download_count: 10000000 }
+    ];
+
+    application_information(&applications);
+    download_increase(&mut applications);
+    application_information(&applications);
+
+}
+
+fn download_increase(applications: &mut Vec<GooglePlayApplication>) {
+    for application in applications {
+        if application.name == "우리동네GS" {
+            application.download_count *= 10;
+        }
+    }
+}
+
+fn application_information(applications: &Vec<GooglePlayApplication>) {
+    for application in applications {
+        println!("{:?}", application);
+    }
+}
