@@ -139,8 +139,8 @@ fn variable_examples() {
 
     let url = "https://httpbin.org/ip";
 
-    let tenor_key = env::var("TENOR_API_KEY")
-        .unwrap_or_else(|_| String::from("<default_api_key>"));
+    let env_key = env::var("ENV_KEY")
+        .unwrap_or_else(|_| String::from("o9a3m5fg093mg0(#%T"));
 
     let signed_int: i64 = 0xff_ff_ff_ff_ff; // ???
 }
