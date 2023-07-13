@@ -15,6 +15,7 @@ use blog::ownership::ownership_is_difficult;
 use blog::ownership::ownership_is_fun;
 use blog::ownership::data_race;
 use blog::option::coupon_option;
+use blog::tuple_match::cafe25;
 
 mod dto;
 mod client;
@@ -223,4 +224,5 @@ fn main() {
     ownership_is_fun();
     data_race();
     coupon_option();
+    cafe25();
 }
