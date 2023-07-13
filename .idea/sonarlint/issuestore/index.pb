@@ -6,8 +6,6 @@ L
 :
 
 src/dto.rs,f\8\f85014b9ecc4ba4e31fa7e3a91ee741803d6e6b2
-M
-src/client/http_bin_client.rs,7\7\775b391cf1bfe6082368b745928f8a5af9414c8f
 E
 src/type_inference.rs,d\b\db9716455436178c4488b6b9c7d8a59d95eb14de
 >

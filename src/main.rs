@@ -16,6 +16,8 @@ use blog::ownership::ownership_is_fun;
 use blog::ownership::data_race;
 use blog::option::coupon_option;
 use blog::tuple_match::cafe25;
+use blog::ip_address_result::get_ip_address;
+use blog::ip_address_result::print_ip_address;
 
 mod dto;
 mod client;
@@ -225,4 +227,6 @@ fn main() {
     data_race();
     coupon_option();
     cafe25();
+    let ip_address = get_ip_address();
+    print_ip_address(&ip_address);
 }
