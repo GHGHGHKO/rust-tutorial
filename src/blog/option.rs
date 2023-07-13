@@ -14,6 +14,13 @@ pub fn coupon_option() {
 
     for gs_postbox in &gs_postbox_info {
         println!("{} 기본 가격 : {}", gs_postbox.name, gs_postbox.price);
-        println!("쿠폰 할인가 : {}", gs_postbox.price - gs_postbox.discount_coupon_price)
+        match gs_postbox.discount_coupon_price {
+            Some(discount_price) =>
+                println!("{}원 할인 쿠폰, 쿠폰 할인가 : {}",
+                         discount_price,
+                         gs_postbox.price - discount_price),
+
+            None => println!("쿠폰 할인가 : 쿠폰이 적용되지 않음")
+        }
     }
 }
