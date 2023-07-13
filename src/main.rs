@@ -14,6 +14,7 @@ use blog::shadowing::vector_shadowing;
 use blog::ownership::ownership_is_difficult;
 use blog::ownership::ownership_is_fun;
 use blog::ownership::data_race;
+use blog::option::coupon_option;
 
 mod dto;
 mod client;
@@ -221,5 +222,5 @@ fn main() {
     ownership_is_difficult();
     ownership_is_fun();
     data_race();
-
+    coupon_option();
 }
