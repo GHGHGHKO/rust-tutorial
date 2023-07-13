@@ -18,6 +18,8 @@ use blog::option::coupon_option;
 use blog::tuple_match::cafe25;
 use blog::ip_address_result::get_ip_address;
 use blog::ip_address_result::print_ip_address;
+use blog::os_info_result::get_os_info;
+use blog::os_info_result::print_os_info;
 
 mod dto;
 mod client;
@@ -227,6 +229,8 @@ fn main() {
     data_race();
     coupon_option();
     cafe25();
-    let ip_address = get_ip_address();
-    print_ip_address(&ip_address);
+    /*let ip_address = get_ip_address();
+    print_ip_address(&ip_address);*/
+    let os_info = get_os_info();
+    print_os_info(os_info);
 }
